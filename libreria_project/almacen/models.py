@@ -1,4 +1,5 @@
 from django.db import models
+
 class product(models.Model):
     categoria = models.TextField()
     nombre= models.TextField()
@@ -6,5 +7,3 @@ class product(models.Model):
     precio = models.IntegerField()
     imagen=models.ImageField()
     stock= models.IntegerField()
-    
-    
