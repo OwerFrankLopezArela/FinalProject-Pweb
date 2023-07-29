@@ -1,0 +1,14 @@
+{% for obj in productos %}
+<div class="product">
+    <h1 class="product-title">{{ obj.nombre }}</h1>
+    
+    <div class="img-container">
+        <img src='{{ obj.imagen }}' alt = '{{ obj.nombre }}'class="product-image">
+    </div>
+
+    <h2 class="product-description">{{ obj.descripcion }}</h2>
+    <h2>Stock: {{ obj.stock }}</h2>
+    <h1 class="product-price">Precio: S/{{ obj.precio }}</h1>
+    <button class="buy-button">COMPRAR</button>
+</div>
+{% endfor %}
