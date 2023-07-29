@@ -132,3 +132,8 @@ h1 {
   color: #4285F4;
   transition: background-color 0.2s, color 0.2s;
 }
+
+.mensaje {
+  font-size: 18px;
+  color: #333;
+}
