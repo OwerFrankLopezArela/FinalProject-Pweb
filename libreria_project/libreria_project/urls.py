@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import RedirectView
-from almacen.views import ObjetoTienda, obtener_productos
+from almacen.views import ObjetoTienda, obtener_productos, crear_producto
 
 urlpatterns = [
     path('', RedirectView.as_view(url='almacen/', permanent=True), name="otro"),
     path('admin/', admin.site.urls),
     path('almacen/',ObjetoTienda,name='otro'),
     path('obtener_productos/',obtener_productos, name='productos'),
+    path('crear_producto', crear_producto, name='crear_producto'),
 ]

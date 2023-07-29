@@ -1,5 +1,11 @@
 {% extends 'almacen/base.html' %}
 
+{% if user.is_authenticated %}
+    <a href="{% url 'crear_registro' %}">Crear Registro</a>
+    <a href="{% url 'actualizar_registro' registro_id %}">Actualizar Registro</a>
+    <a href="{% url 'borrar_registro' registro_id %}">Borrar Registro</a>
+{% endif %}
+
 {% block content %}
 <select id = "opcion"  class = "" onchange="obtenerSelect(this)">
     <option class = "" onclick="">Todos</button>

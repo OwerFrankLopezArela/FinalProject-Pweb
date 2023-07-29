@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import product
+from .forms import ProductForm
 
 # Create your views here.
 def ObjetoTienda(request):
@@ -24,3 +25,13 @@ def obtener_productos(request):
         'productos': productos
     }
     return render(request, 'almacen/productos.html', context)
+
+def crear_producto(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('ObjetoTienda')
+    else:
+        form = ProductForm()
+        return render (request, 'almacen/createProduct.html', {'form': form})
