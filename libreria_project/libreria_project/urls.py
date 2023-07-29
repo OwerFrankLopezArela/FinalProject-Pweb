@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import RedirectView
 from almacen.views import ObjetoTienda, obtener_productos, crear_producto
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', RedirectView.as_view(url='almacen/', permanent=True), name="otro"),
@@ -25,4 +27,4 @@ urlpatterns = [
     path('almacen/',ObjetoTienda,name='otro'),
     path('obtener_productos/',obtener_productos, name='productos'),
     path('crear_producto', crear_producto, name='crear_producto'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
