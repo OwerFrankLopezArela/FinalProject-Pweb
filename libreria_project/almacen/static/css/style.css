@@ -7,7 +7,7 @@
   }
     
   body {
-    font-family: Impact;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: #000;
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@
   
   .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px;
     padding: 20px;
   }
     
@@ -87,3 +87,10 @@
   .buy-button:hover {
     background-color: #e53935;
   }
+
+
+h1 {
+  color: #333;
+  margin: 10px;
+}
+
